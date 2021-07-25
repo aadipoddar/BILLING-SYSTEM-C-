@@ -73,6 +73,7 @@ namespace AnyStore.UI
             this.lblLogin.TabIndex = 7;
             this.lblLogin.Text = "LOGIN";
             this.lblLogin.UseVisualStyleBackColor = false;
+            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // cmbUserType
             // 
