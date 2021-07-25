@@ -304,6 +304,7 @@ namespace AnyStore.UI
             this.dgvUsers.RowTemplate.Height = 25;
             this.dgvUsers.Size = new System.Drawing.Size(828, 387);
             this.dgvUsers.TabIndex = 21;
+            this.dgvUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_RowHeaderMouseClick);
             // 
             // txtSearch
             // 
@@ -336,6 +337,7 @@ namespace AnyStore.UI
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -348,6 +350,7 @@ namespace AnyStore.UI
             this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -361,6 +364,7 @@ namespace AnyStore.UI
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmUsers
             // 
@@ -399,6 +403,7 @@ namespace AnyStore.UI
             this.Name = "frmUsers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Users";
+            this.Load += new System.EventHandler(this.frmUsers_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
