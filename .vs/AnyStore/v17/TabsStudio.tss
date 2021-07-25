@@ -2,13 +2,12 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>D:\AnyStore\AnyStore\frmAdminDashboard.cs</string>
+      <string>D:\AnyStore\AnyStore\UI\frmUsers.cs</string>
+      <string>D:\AnyStore\AnyStore\UI\frmUsers.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>D:\AnyStore\AnyStore\Program.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>D:\AnyStore\AnyStore\frmUserDashboard.cs</string>
+      <string>D:\AnyStore\AnyStore\UI\frmAdminDashboard.cs</string>
+      <string>D:\AnyStore\AnyStore\UI\frmAdminDashboard.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

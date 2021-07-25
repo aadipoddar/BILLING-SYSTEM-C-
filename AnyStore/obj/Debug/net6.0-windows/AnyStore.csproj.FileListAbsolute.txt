@@ -16,3 +16,6 @@ D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.dll
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\ref\AnyStore.dll
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.pdb
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.genruntimeconfig.cache
+D:\AnyStore\AnyStore\bin\Debug\net6.0-windows\AnyStore.dll.config
+D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmUsers.resources
+D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.Properties.Resources.resources
