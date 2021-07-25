@@ -4,6 +4,9 @@
     <Compile Update="UI\frmAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\frmUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
