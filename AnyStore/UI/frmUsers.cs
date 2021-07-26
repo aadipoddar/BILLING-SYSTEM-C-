@@ -29,6 +29,8 @@ namespace AnyStore.UI
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+
             //getiing data from UI
             u.first_name = txtFirstName.Text;
             u.last_name = txtLastName.Text;
@@ -40,7 +42,12 @@ namespace AnyStore.UI
             u.gender = cmbGender.Text;
             u.user_type = cmbUserType.Text;
             u.added_date = DateTime.Now;
-            u.added_by = 1;
+
+            //geeting username of logged in user
+            string loggedUser = frmLogin.loggedIn;
+            userBLL usr = dal.GetIDFromUsername(loggedUser);
+
+            u.added_by = usr.id;
 
             //Inserting data into database
             bool success = dal.Insert(u);

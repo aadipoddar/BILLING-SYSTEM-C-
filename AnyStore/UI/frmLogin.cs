@@ -21,6 +21,7 @@ namespace AnyStore.UI
 
         loginBLL l = new loginBLL();
         loginDAL dal = new loginDAL();
+        public static string loggedIn;
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
@@ -45,6 +46,7 @@ namespace AnyStore.UI
             {
                 //login successfull
                 MessageBox.Show("Login Successfull");
+                loggedIn = l.username;
 
                 //need to open rspective form based on user type
                 switch(l.user_type)
