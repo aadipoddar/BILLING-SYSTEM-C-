@@ -27,3 +27,4 @@ D:\AnyStore\AnyStore\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\Sy
 D:\AnyStore\AnyStore\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.csproj.CopyComplete
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmLogin.resources
+D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmCategories.resources

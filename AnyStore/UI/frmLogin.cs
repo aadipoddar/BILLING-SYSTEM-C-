@@ -31,7 +31,7 @@ namespace AnyStore.UI
         private void pboxClose_Click(object sender, EventArgs e)
         {
             //code to close the form
-            this.Close();
+            Application.Exit();
         }
 
         private void lblLogin_Click(object sender, EventArgs e)

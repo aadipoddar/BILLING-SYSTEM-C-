@@ -35,5 +35,11 @@ namespace AnyStore
         {
             lblLoggedInUser.Text = frmLogin.loggedIn;
         }
+
+        private void categoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategories categories = new frmCategories();
+            categories.Show();
+        }
     }
 }
