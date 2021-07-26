@@ -89,7 +89,7 @@ namespace AnyStore.UI
             this.txtCategoryID.Location = new System.Drawing.Point(147, 64);
             this.txtCategoryID.Name = "txtCategoryID";
             this.txtCategoryID.ReadOnly = true;
-            this.txtCategoryID.Size = new System.Drawing.Size(255, 25);
+            this.txtCategoryID.Size = new System.Drawing.Size(411, 25);
             this.txtCategoryID.TabIndex = 26;
             // 
             // lblCategoryID
@@ -109,7 +109,7 @@ namespace AnyStore.UI
             this.txtDescription.Location = new System.Drawing.Point(147, 146);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(255, 99);
+            this.txtDescription.Size = new System.Drawing.Size(411, 99);
             this.txtDescription.TabIndex = 24;
             // 
             // lblDescription
@@ -128,7 +128,7 @@ namespace AnyStore.UI
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTitle.Location = new System.Drawing.Point(147, 105);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(255, 25);
+            this.txtTitle.Size = new System.Drawing.Size(411, 25);
             this.txtTitle.TabIndex = 22;
             // 
             // lblTitle
@@ -149,10 +149,11 @@ namespace AnyStore.UI
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(147, 434);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(255, 51);
+            this.btnDelete.Size = new System.Drawing.Size(411, 51);
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -161,10 +162,11 @@ namespace AnyStore.UI
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.Location = new System.Drawing.Point(147, 360);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(255, 51);
+            this.btnUpdate.Size = new System.Drawing.Size(411, 51);
             this.btnUpdate.TabIndex = 28;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -173,25 +175,27 @@ namespace AnyStore.UI
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAdd.Location = new System.Drawing.Point(147, 286);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(255, 51);
+            this.btnAdd.Size = new System.Drawing.Size(411, 51);
             this.btnAdd.TabIndex = 27;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSearch.Location = new System.Drawing.Point(511, 64);
+            this.txtSearch.Location = new System.Drawing.Point(652, 64);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(746, 25);
+            this.txtSearch.Size = new System.Drawing.Size(605, 25);
             this.txtSearch.TabIndex = 32;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSearch.Location = new System.Drawing.Point(429, 66);
+            this.lblSearch.Location = new System.Drawing.Point(581, 66);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(47, 17);
             this.lblSearch.TabIndex = 31;
@@ -200,11 +204,12 @@ namespace AnyStore.UI
             // dgvUsers
             // 
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(429, 105);
+            this.dgvUsers.Location = new System.Drawing.Point(652, 105);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowTemplate.Height = 25;
-            this.dgvUsers.Size = new System.Drawing.Size(828, 380);
+            this.dgvUsers.Size = new System.Drawing.Size(605, 380);
             this.dgvUsers.TabIndex = 30;
+            this.dgvUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_RowHeaderMouseClick);
             // 
             // frmCategories
             // 
@@ -229,6 +234,7 @@ namespace AnyStore.UI
             this.Name = "frmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCategories";
+            this.Load += new System.EventHandler(this.frmCategories_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
