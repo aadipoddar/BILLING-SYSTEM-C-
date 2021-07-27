@@ -47,5 +47,11 @@ namespace AnyStore
             frmProducts products = new frmProducts();
             products.Show();
         }
+
+        private void dealerAndCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDeaCust deaCust = new frmDeaCust();
+            deaCust.Show();
+        }
     }
 }

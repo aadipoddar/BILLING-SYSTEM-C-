@@ -42,6 +42,7 @@ namespace AnyStore
             this.lblAppFName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSHead = new System.Windows.Forms.Label();
+            this.dealerAndCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlFooter.SuspendLayout();
             this.menuStripTop.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@ namespace AnyStore
             this.usersToolStripMenuItem,
             this.categoryToolStripMenuItem,
             this.productsToolStripMenuItem,
+            this.dealerAndCustomerToolStripMenuItem,
             this.inventoryToolStripMenuItem,
             this.transactionsToolStripMenuItem});
             this.menuStripTop.Location = new System.Drawing.Point(0, 0);
@@ -166,6 +168,13 @@ namespace AnyStore
             this.lblSHead.TabIndex = 6;
             this.lblSHead.Text = "Billing and Inventory Management";
             // 
+            // dealerAndCustomerToolStripMenuItem
+            // 
+            this.dealerAndCustomerToolStripMenuItem.Name = "dealerAndCustomerToolStripMenuItem";
+            this.dealerAndCustomerToolStripMenuItem.Size = new System.Drawing.Size(130, 20);
+            this.dealerAndCustomerToolStripMenuItem.Text = "Dealer and Customer";
+            this.dealerAndCustomerToolStripMenuItem.Click += new System.EventHandler(this.dealerAndCustomerToolStripMenuItem_Click);
+            // 
             // frmAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -209,6 +218,7 @@ namespace AnyStore
         private System.Windows.Forms.Label lblAppFName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSHead;
+        private System.Windows.Forms.ToolStripMenuItem dealerAndCustomerToolStripMenuItem;
     }
 }
 
