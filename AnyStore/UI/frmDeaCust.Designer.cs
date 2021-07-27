@@ -49,11 +49,11 @@ namespace AnyStore.UI
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.dgvDeaCust = new System.Windows.Forms.DataGridView();
             this.cmdDeaCust = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeaCust)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxClose
@@ -182,7 +182,7 @@ namespace AnyStore.UI
             this.txtAddress.Location = new System.Drawing.Point(140, 291);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(411, 51);
+            this.txtAddress.Size = new System.Drawing.Size(411, 98);
             this.txtAddress.TabIndex = 38;
             // 
             // lblAddress
@@ -201,36 +201,39 @@ namespace AnyStore.UI
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(140, 485);
+            this.btnDelete.Location = new System.Drawing.Point(140, 524);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(411, 47);
             this.btnDelete.TabIndex = 43;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Chartreuse;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUpdate.Location = new System.Drawing.Point(140, 427);
+            this.btnUpdate.Location = new System.Drawing.Point(140, 466);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(411, 47);
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.ForestGreen;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdd.Location = new System.Drawing.Point(140, 369);
+            this.btnAdd.Location = new System.Drawing.Point(140, 408);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(411, 47);
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtSearch
             // 
@@ -251,14 +254,15 @@ namespace AnyStore.UI
             this.lblSearch.TabIndex = 45;
             this.lblSearch.Text = "Search";
             // 
-            // dgvCategories
+            // dgvDeaCust
             // 
-            this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategories.Location = new System.Drawing.Point(609, 112);
-            this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.RowTemplate.Height = 25;
-            this.dgvCategories.Size = new System.Drawing.Size(676, 417);
-            this.dgvCategories.TabIndex = 44;
+            this.dgvDeaCust.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDeaCust.Location = new System.Drawing.Point(609, 112);
+            this.dgvDeaCust.Name = "dgvDeaCust";
+            this.dgvDeaCust.RowTemplate.Height = 25;
+            this.dgvDeaCust.Size = new System.Drawing.Size(676, 417);
+            this.dgvDeaCust.TabIndex = 44;
+            this.dgvDeaCust.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDeaCust_RowHeaderMouseClick);
             // 
             // cmdDeaCust
             // 
@@ -277,11 +281,11 @@ namespace AnyStore.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1297, 541);
+            this.ClientSize = new System.Drawing.Size(1297, 596);
             this.Controls.Add(this.cmdDeaCust);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.dgvCategories);
+            this.Controls.Add(this.dgvDeaCust);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -301,10 +305,11 @@ namespace AnyStore.UI
             this.Name = "frmDeaCust";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDeaCust";
+            this.Load += new System.EventHandler(this.frmDeaCust_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDeaCust)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,7 +336,7 @@ namespace AnyStore.UI
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.DataGridView dgvCategories;
+        private System.Windows.Forms.DataGridView dgvDeaCust;
         private System.Windows.Forms.ComboBox cmdDeaCust;
     }
 }
