@@ -243,6 +243,7 @@ namespace AnyStore.UI
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(605, 25);
             this.txtSearch.TabIndex = 46;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
