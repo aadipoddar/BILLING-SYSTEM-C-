@@ -57,7 +57,7 @@ namespace AnyStore.UI
             }
             //refrehing data grid view
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void clear()
@@ -71,16 +71,16 @@ namespace AnyStore.UI
         {
             //get index of particular row
             int rowIndex = e.RowIndex;
-            txtCategoryID.Text = dgvUsers.Rows[rowIndex].Cells[0].Value.ToString();
-            txtTitle.Text = dgvUsers.Rows[rowIndex].Cells[1].Value.ToString();
-            txtDescription.Text = dgvUsers.Rows[rowIndex].Cells[2].Value.ToString();
+            txtCategoryID.Text = dgvCategories.Rows[rowIndex].Cells[0].Value.ToString();
+            txtTitle.Text = dgvCategories.Rows[rowIndex].Cells[1].Value.ToString();
+            txtDescription.Text = dgvCategories.Rows[rowIndex].Cells[2].Value.ToString();
         }
 
         private void frmCategories_Load(object sender, EventArgs e)
         {
             //refrehing data grid view
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace AnyStore.UI
             }
             //refrehing data grid view
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -135,7 +135,7 @@ namespace AnyStore.UI
             }
             //refrehing data grid view
             DataTable dt = dal.Select();
-            dgvUsers.DataSource = dt;
+            dgvCategories.DataSource = dt;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -148,13 +148,13 @@ namespace AnyStore.UI
             {
                 //show user based on keywords
                 DataTable dt = dal.Search(keywords);
-                dgvUsers.DataSource = dt;
+                dgvCategories.DataSource = dt;
             }
             else
             {
                 //show all users from database
                 DataTable dt = dal.Select();
-                dgvUsers.DataSource = dt;
+                dgvCategories.DataSource = dt;
             }
         }
     }

@@ -44,10 +44,10 @@ namespace AnyStore.UI
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.dgvCategories = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTop
@@ -201,15 +201,15 @@ namespace AnyStore.UI
             this.lblSearch.TabIndex = 31;
             this.lblSearch.Text = "Search";
             // 
-            // dgvUsers
+            // dgvCategories
             // 
-            this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(652, 105);
-            this.dgvUsers.Name = "dgvUsers";
-            this.dgvUsers.RowTemplate.Height = 25;
-            this.dgvUsers.Size = new System.Drawing.Size(605, 380);
-            this.dgvUsers.TabIndex = 30;
-            this.dgvUsers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_RowHeaderMouseClick);
+            this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategories.Location = new System.Drawing.Point(581, 105);
+            this.dgvCategories.Name = "dgvCategories";
+            this.dgvCategories.RowTemplate.Height = 25;
+            this.dgvCategories.Size = new System.Drawing.Size(676, 380);
+            this.dgvCategories.TabIndex = 30;
+            this.dgvCategories.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvUsers_RowHeaderMouseClick);
             // 
             // frmCategories
             // 
@@ -219,7 +219,7 @@ namespace AnyStore.UI
             this.ClientSize = new System.Drawing.Size(1269, 538);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblSearch);
-            this.Controls.Add(this.dgvUsers);
+            this.Controls.Add(this.dgvCategories);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -238,7 +238,7 @@ namespace AnyStore.UI
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,6 +259,6 @@ namespace AnyStore.UI
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.DataGridView dgvCategories;
     }
 }
