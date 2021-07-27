@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,18 @@ namespace AnyStore.UI
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        categoriesDAL cdal = new categoriesDAL();
+
+
+        private void frmProducts_Load(object sender, EventArgs e)
+        {
+            //refrehing data grid view
+            DataTable categoriesDt = cdal.Select();
+            cmbCategory.DataSource = categoriesDt;
+            cmbCategory.DisplayMember = "title";
+            cmbCategory.ValueMember = "title";
         }
     }
 }
