@@ -195,6 +195,7 @@ namespace AnyStore.UI
             this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -207,6 +208,7 @@ namespace AnyStore.UI
             this.btnUpdate.TabIndex = 33;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -219,6 +221,7 @@ namespace AnyStore.UI
             this.btnAdd.TabIndex = 32;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvProducts
             // 
@@ -228,6 +231,7 @@ namespace AnyStore.UI
             this.dgvProducts.RowTemplate.Height = 25;
             this.dgvProducts.Size = new System.Drawing.Size(676, 415);
             this.dgvProducts.TabIndex = 35;
+            this.dgvProducts.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvProducts_RowHeaderMouseClick);
             // 
             // txtSearch
             // 
@@ -237,6 +241,7 @@ namespace AnyStore.UI
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(605, 25);
             this.txtSearch.TabIndex = 37;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 

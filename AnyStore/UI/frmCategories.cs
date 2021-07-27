@@ -125,13 +125,13 @@ namespace AnyStore.UI
             if (success == true)
             {
                 //data updated successfully
-                MessageBox.Show("user successfully deleted");
+                MessageBox.Show("Category successfully deleted");
                 clear();
             }
             else
             {
                 //failed to update user
-                MessageBox.Show("Failed to delete user");
+                MessageBox.Show("Failed to delete Category");
             }
             //refrehing data grid view
             DataTable dt = dal.Select();
