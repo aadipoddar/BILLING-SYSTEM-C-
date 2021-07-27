@@ -30,3 +30,4 @@ D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmLogin.resources
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmCategories.resources
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmProducts.resources
 D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmDeaCust.resources
+D:\AnyStore\AnyStore\obj\Debug\net6.0-windows\AnyStore.UI.frmPurchaseAndSales.resources
