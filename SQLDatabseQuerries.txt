@@ -1,0 +1,74 @@
+CREATE DATABASE AnyStore
+
+CREATE TABLE [dbo].[tbl_categories] (
+    [id]          INT          IDENTITY (1, 1) NOT NULL,
+    [title]       VARCHAR (50) NULL,
+    [description] TEXT         NULL,
+    [added_date]  DATETIME     NULL,
+    [added_by]    INT          NULL,
+    CONSTRAINT [PK_tbl_categories] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_dea_cust] (
+    [id]         INT           IDENTITY (1, 1) NOT NULL,
+    [type]       VARCHAR (50)  NULL,
+    [name]       VARCHAR (150) NULL,
+    [email]      VARCHAR (150) NULL,
+    [contact]    VARCHAR (15)  NULL,
+    [address]    TEXT          NULL,
+    [added_date] DATETIME      NULL,
+    [added_by]   INT           NULL,
+    CONSTRAINT [PK_tbl_dea_cust] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_products] (
+    [id]          INT             IDENTITY (1, 1) NOT NULL,
+    [name]        VARCHAR (50)    NULL,
+    [category]    VARCHAR (50)    NULL,
+    [description] TEXT            NULL,
+    [rate]        DECIMAL (18, 2) NULL,
+    [qty]         DECIMAL (18, 2) NULL,
+    [added_date]  DATETIME        NULL,
+    [added_by]    NCHAR (10)      NULL,
+    CONSTRAINT [PK_tbl_products] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_transaction_detail] (
+    [id]          INT             IDENTITY (1, 1) NOT NULL,
+    [product_id]  INT             NULL,
+    [rate]        DECIMAL (18, 2) NULL,
+    [qty]         DECIMAL (18, 2) NULL,
+    [total]       DECIMAL (18, 2) NULL,
+    [dea_cust_id] INT             NULL,
+    [added_date]  DATETIME        NULL,
+    [added_by]    INT             NULL,
+    CONSTRAINT [PK_tbl_transaction_detail] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_transactions] (
+    [id]               INT             IDENTITY (1, 1) NOT NULL,
+    [type]             VARCHAR (50)    NULL,
+    [dea_cust_id]      INT             NULL,
+    [grandTotal]       DECIMAL (18, 2) NULL,
+    [transaction_date] DATETIME        NULL,
+    [tax]              DECIMAL (18, 2) NULL,
+    [discount]         DECIMAL (18, 2) NULL,
+    [added_by]         INT             NULL,
+    CONSTRAINT [PK_tbl_transactions] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[tbl_users] (
+    [id]         INT           IDENTITY (1, 1) NOT NULL,
+    [first_name] VARCHAR (50)  NULL,
+    [last_name]  VARCHAR (50)  NULL,
+    [email]      VARCHAR (150) NULL,
+    [username]   VARCHAR (50)  NULL,
+    [password]   VARCHAR (50)  NULL,
+    [contact]    VARCHAR (50)  NULL,
+    [address]    TEXT          NULL,
+    [gender]     VARCHAR (15)  NULL,
+    [user_type]  VARCHAR (15)  NULL,
+    [added_date] DATETIME      NULL,
+    [added_by]   INT           NULL,
+    CONSTRAINT [PK_tbl_users] PRIMARY KEY CLUSTERED ([id] ASC)
+);
