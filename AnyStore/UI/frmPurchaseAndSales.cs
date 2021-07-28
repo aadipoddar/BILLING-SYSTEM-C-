@@ -21,6 +21,7 @@ namespace AnyStore.UI
 
         DeaCustDAL dcDal = new DeaCustDAL();
         productsDAL pDal = new productsDAL();
+        DataTable transactionDT = new DataTable();
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -39,6 +40,12 @@ namespace AnyStore.UI
 
             //set the value on lblTop
             lblTop.Text = type;
+
+            //specify columns for aor transaction datatables
+            transactionDT.Columns.Add("Product Name");
+            transactionDT.Columns.Add("Rate");
+            transactionDT.Columns.Add("Quantity");
+            transactionDT.Columns.Add("Total");
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -90,6 +97,40 @@ namespace AnyStore.UI
             txtProductName.Text = p.name;
             txtProductInventory.Text = p.qty.ToString();
             txtProductRate.Text = p.rate.ToString();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //get product name rate and quantity
+            string productName = txtProductName.Text;
+            decimal Rate = decimal.Parse(txtProductRate.Text);
+            decimal Qty= decimal.Parse(txtProductQty.Text);
+
+            decimal Total = Rate * Qty;
+
+            decimal subTotal = decimal.Parse(txtSubTotal.Text);
+            subTotal = subTotal + Total;
+
+            //check whether the product is selected or not
+            if(productName == "")
+            {
+                MessageBox.Show("Selct Product first");
+            }
+            else
+            {
+                transactionDT.Rows.Add(productName, Rate, Qty, Total);
+
+                dgvAddedProducts.DataSource = transactionDT;
+
+                txtSubTotal.Text = subTotal.ToString();
+
+                //clear textboxes
+                txtSearchProduct.Text = "";
+                txtProductRate.Text = "";
+                txtProductName.Text = "";
+                txtProductQty.Text = "";
+                txtProductInventory.Text = "";
+            }
         }
     }
 }

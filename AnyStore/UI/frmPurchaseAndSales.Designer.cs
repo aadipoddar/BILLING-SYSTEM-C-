@@ -289,6 +289,7 @@ namespace AnyStore.UI
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtProductRate
             // 
@@ -503,6 +504,7 @@ namespace AnyStore.UI
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(478, 25);
             this.txtSubTotal.TabIndex = 16;
+            this.txtSubTotal.Text = "0";
             // 
             // lblReturnAmount
             // 
