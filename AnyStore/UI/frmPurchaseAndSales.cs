@@ -1,5 +1,6 @@
 ﻿using AnyStore.DAL;
 using AnyStore.BLL;
+using System.Transactions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,10 @@ namespace AnyStore.UI
 
         DeaCustDAL dcDal = new DeaCustDAL();
         productsDAL pDal = new productsDAL();
+        userDAL uDal = new userDAL();
         DataTable transactionDT = new DataTable();
+        transactionDAL tDal = new transactionDAL();
+        transactionDetailDAL tdDal = new transactionDetailDAL();
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -178,6 +182,102 @@ namespace AnyStore.UI
             decimal returnAmount = paidAmount - garndTotal;
 
             txtReturnAmount.Text = returnAmount.ToString();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //get values from purchase sales from first
+            transactionsBLL transaction = new transactionsBLL();   
+
+            transaction.type = lblTop.Text;
+
+            //get id from of dealer or customer here
+            //lets get name of the dealer or customer
+            string DeaCustName = txtName.Text;
+
+            DeaCustBLL dc = dcDal.GetDeaCustIDFromName(DeaCustName);
+
+            transaction.dea_cust_id = dc.id;
+            transaction.grandTotal = Math.Round(decimal.Parse(txtGrandTotal.Text),2);
+            transaction.transaction_date = DateTime.Now;
+            transaction.tax = decimal.Parse(txtVat.Text);
+            transaction.discount = decimal.Parse(txtDiscount.Text);
+
+            //get username of logged in user
+            string username = frmLogin.loggedIn;
+            userBLL u  = uDal.GetIDFromUsername(username);
+
+            transaction.added_by = u.id;
+            transaction.transactionDetails = transactionDT;
+
+            //lets create a boolean variable and set value to false
+            bool success = false;
+
+            //actual code to insert transaction and transaction details
+            using(TransactionScope scope = new TransactionScope())
+            {
+                int transactionID = -1;
+
+                //create bool value and insert transaction
+                bool w = tDal.Insert_Transaction(transaction, out transactionID);
+
+                //use fore loop to insert transaction details
+                for(int i = 0; i < transactionDT.Rows.Count; i++)
+                {
+                    //get all deatils of products
+                    transactionDetailBLL transactionDetail = new transactionDetailBLL();
+
+                    //get the product name and convert it to id
+                    string ProductName = transactionDT.Rows[i][0].ToString();
+
+                    productsBLL p  = pDal.GetProductIDFromName(ProductName);
+
+                    transactionDetail.product_id = p.id;
+                    transactionDetail.rate = decimal.Parse(transactionDT.Rows[i][1].ToString());
+                    transactionDetail.qty = decimal.Parse(transactionDT.Rows[i][2].ToString());
+                    transactionDetail.total = Math.Round(decimal.Parse(transactionDT.Rows[i][3].ToString()),2);
+                    transactionDetail.dea_cust_id = dc.id;
+                    transactionDetail.added_date = DateTime.Now;
+                    transactionDetail.added_by = u.id;
+
+                    //insert transaction details inside database
+                    bool y = tdDal.InsertTransactionDetail(transactionDetail);                    
+                    success = w && y;
+                }
+
+                if (success == true)
+                {
+                    //transaction scope
+                    scope.Complete();
+
+                    MessageBox.Show("Transaction Coompleted");
+
+                    //clear data grid view and all text boxes
+                    dgvAddedProducts.DataSource = null;
+                    dgvAddedProducts.Rows.Clear();
+
+                    txtSearch.Text = "";
+                    txtName.Text = "";
+                    txtEmail.Text = "";
+                    txtContact.Text = "";
+                    txtAddress.Text = "";
+                    txtSearchProduct.Text = "";
+                    txtProductName.Text = "";
+                    txtProductInventory.Text = "";
+                    txtProductRate.Text = "";
+                    txtProductQty.Text = "";
+                    txtSubTotal.Text = "0";
+                    txtDiscount.Text = "0";
+                    txtVat.Text = "0";
+                    txtGrandTotal.Text = "0";
+                    txtReturnAmount.Text = "";
+                    txtPaidAmount.Text = "0";
+                }
+                else
+                {
+                    MessageBox.Show("Transaction Failed");
+                }
+            }
         }
     }
 }

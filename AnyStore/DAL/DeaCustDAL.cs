@@ -274,5 +274,48 @@ namespace AnyStore.DAL
             return dc;
         }
         #endregion
+
+        #region Method to get ID of Dealer and Customer based on Name
+        public DeaCustBLL GetDeaCustIDFromName(string Name)
+        {
+            //first create an object of DeaCustBLL and return it 
+            DeaCustBLL dc = new DeaCustBLL();
+
+            //Sql Connection
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            //data table
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //sql qurry to get id based on Name
+                string sql = "SELECT id FROM tbl_dea_cust WHERE name='" + Name + "'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                //passing value from adapter to datatable
+                adapter.Fill(dt);
+
+                if(dt.Rows.Count > 0)
+                {
+                    //pass values from dt to deacustbll dc
+                    dc.id = int.Parse(dt.Rows[0]["id"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dc;
+        }
+        #endregion
     }
 }

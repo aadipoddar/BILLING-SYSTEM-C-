@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnyStore.BLL;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AnyStore.BLL;
 
 namespace AnyStore.DAL
 {
@@ -17,7 +17,7 @@ namespace AnyStore.DAL
         static string myconnstrng = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
         #region Insert Transaction Method
-        public bool Insert_Transaction(transactionsDetailBLL t , out int transactionID)
+        public bool Insert_Transaction(transactionsBLL t , out int transactionID)
         {
             //create a bool variable and set its value to false and return it
             bool isSuccess = false;
@@ -30,7 +30,7 @@ namespace AnyStore.DAL
             try
             {
                 //writing querry to add new category
-                String sql = "INSERT INTO tbl_transactions (type,dea_cust_id,granTotal,transaction_date,tax,discount,added_by) VALUES (@type,@dea_cust_id,@granTotal,@transaction_date,@tax,@discount,@added_by)";
+                String sql = "INSERT INTO tbl_transactions (type,dea_cust_id,grandTotal,transaction_date,tax,discount,added_by) VALUES (@type,@dea_cust_id,@grandTotal,@transaction_date,@tax,@discount,@added_by); SELECT @@IDENTITY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 

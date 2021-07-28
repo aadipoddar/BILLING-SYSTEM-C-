@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnyStore.BLL
 {
-    class transactionsDetailBLL
+    class transactionsBLL
     {
         public int id { get; set; }
         public string type { get; set; }
@@ -16,5 +17,6 @@ namespace AnyStore.BLL
         public decimal tax { get; set; }
         public decimal discount { get; set; }
         public int added_by { get; set; }
+        public DataTable transactionDetails { get; set; }
     }
 }
