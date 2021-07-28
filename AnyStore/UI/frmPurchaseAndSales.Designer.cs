@@ -470,6 +470,7 @@ namespace AnyStore.UI
             this.txtPaidAmount.Name = "txtPaidAmount";
             this.txtPaidAmount.Size = new System.Drawing.Size(478, 25);
             this.txtPaidAmount.TabIndex = 20;
+            this.txtPaidAmount.TextChanged += new System.EventHandler(this.txtPaidAmount_TextChanged);
             // 
             // txtGrandTotal
             // 
@@ -487,6 +488,7 @@ namespace AnyStore.UI
             this.txtVat.Name = "txtVat";
             this.txtVat.Size = new System.Drawing.Size(478, 25);
             this.txtVat.TabIndex = 18;
+            this.txtVat.TextChanged += new System.EventHandler(this.txtVat_TextChanged);
             // 
             // txtDiscount
             // 
@@ -495,6 +497,7 @@ namespace AnyStore.UI
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(478, 25);
             this.txtDiscount.TabIndex = 17;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtSubTotal
             // 

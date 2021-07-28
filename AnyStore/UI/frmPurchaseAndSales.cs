@@ -132,5 +132,52 @@ namespace AnyStore.UI
                 txtProductInventory.Text = "";
             }
         }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+            string value = txtDiscount.Text;
+
+            if(value == "")
+            {
+                MessageBox.Show("Please add discount first");
+            }
+            else
+            {
+                decimal subTotal = decimal.Parse(txtSubTotal.Text);
+
+                decimal discount = decimal.Parse(txtDiscount.Text);
+
+                decimal grandTotal = ((100 - discount) / 100) * subTotal;
+
+                txtGrandTotal.Text = grandTotal.ToString();
+            }
+        }
+
+        private void txtVat_TextChanged(object sender, EventArgs e)
+        {
+            string check = txtGrandTotal.Text;
+            if(check == "")
+            {
+                MessageBox.Show("Calulate the discount and set the grand total first");
+            }
+            else
+            {
+                decimal previousGT = decimal.Parse(txtGrandTotal.Text);
+                decimal vat = decimal.Parse(txtVat.Text);
+                decimal grandTotalWithVAT = ((100+vat)/100)*previousGT;
+
+                txtGrandTotal.Text = grandTotalWithVAT.ToString();
+            }
+        }
+
+        private void txtPaidAmount_TextChanged(object sender, EventArgs e)
+        {
+            decimal garndTotal = decimal.Parse(txtGrandTotal.Text);
+            decimal paidAmount = decimal.Parse(txtPaidAmount.Text);
+
+            decimal returnAmount = paidAmount - garndTotal;
+
+            txtReturnAmount.Text = returnAmount.ToString();
+        }
     }
 }
