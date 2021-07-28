@@ -187,6 +187,7 @@ namespace AnyStore.UI
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(230, 25);
             this.txtSearch.TabIndex = 8;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblBillDate
             // 
@@ -588,6 +589,7 @@ namespace AnyStore.UI
             this.Name = "frmPurchaseAndSales";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPurchaseAndSales";
+            this.Load += new System.EventHandler(this.frmPurchaseAndSales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
