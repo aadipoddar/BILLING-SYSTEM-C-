@@ -153,6 +153,7 @@ namespace AnyStore.UI
             this.txtAddress.Location = new System.Drawing.Point(713, 22);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(230, 69);
             this.txtAddress.TabIndex = 12;
             // 
@@ -161,6 +162,7 @@ namespace AnyStore.UI
             this.txtContact.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtContact.Location = new System.Drawing.Point(389, 66);
             this.txtContact.Name = "txtContact";
+            this.txtContact.ReadOnly = true;
             this.txtContact.Size = new System.Drawing.Size(230, 25);
             this.txtContact.TabIndex = 11;
             // 
@@ -169,6 +171,7 @@ namespace AnyStore.UI
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtEmail.Location = new System.Drawing.Point(389, 22);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(230, 25);
             this.txtEmail.TabIndex = 10;
             // 
@@ -177,6 +180,7 @@ namespace AnyStore.UI
             this.txtName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtName.Location = new System.Drawing.Point(56, 66);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(230, 25);
             this.txtName.TabIndex = 9;
             // 
@@ -296,6 +300,7 @@ namespace AnyStore.UI
             this.txtProductRate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProductRate.Location = new System.Drawing.Point(860, 29);
             this.txtProductRate.Name = "txtProductRate";
+            this.txtProductRate.ReadOnly = true;
             this.txtProductRate.Size = new System.Drawing.Size(152, 25);
             this.txtProductRate.TabIndex = 20;
             // 
@@ -332,6 +337,7 @@ namespace AnyStore.UI
             this.txtProductInventory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProductInventory.Location = new System.Drawing.Point(597, 31);
             this.txtProductInventory.Name = "txtProductInventory";
+            this.txtProductInventory.ReadOnly = true;
             this.txtProductInventory.Size = new System.Drawing.Size(152, 25);
             this.txtProductInventory.TabIndex = 19;
             // 
@@ -359,6 +365,7 @@ namespace AnyStore.UI
             this.txtProductName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtProductName.Location = new System.Drawing.Point(310, 31);
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(152, 25);
             this.txtProductName.TabIndex = 17;
             // 
