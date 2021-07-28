@@ -45,7 +45,7 @@ namespace AnyStore.UI
             // pictureBoxClose
             // 
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(1236, 0);
+            this.pictureBoxClose.Location = new System.Drawing.Point(964, 0);
             this.pictureBoxClose.Name = "pictureBoxClose";
             this.pictureBoxClose.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,14 +61,14 @@ namespace AnyStore.UI
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 40);
+            this.panel1.Size = new System.Drawing.Size(997, 40);
             this.panel1.TabIndex = 2;
             // 
             // lblTop
             // 
             this.lblTop.AutoSize = true;
             this.lblTop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTop.Location = new System.Drawing.Point(561, 13);
+            this.lblTop.Location = new System.Drawing.Point(443, 13);
             this.lblTop.Name = "lblTop";
             this.lblTop.Size = new System.Drawing.Size(124, 21);
             this.lblTop.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace AnyStore.UI
             this.dgvTransactions.Location = new System.Drawing.Point(12, 119);
             this.dgvTransactions.Name = "dgvTransactions";
             this.dgvTransactions.RowTemplate.Height = 25;
-            this.dgvTransactions.Size = new System.Drawing.Size(1248, 436);
+            this.dgvTransactions.Size = new System.Drawing.Size(957, 436);
             this.dgvTransactions.TabIndex = 31;
             // 
             // lblTransactionType
@@ -111,7 +111,7 @@ namespace AnyStore.UI
             this.btnShowAll.BackColor = System.Drawing.Color.ForestGreen;
             this.btnShowAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAll.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnShowAll.Location = new System.Drawing.Point(1019, 50);
+            this.btnShowAll.Location = new System.Drawing.Point(728, 50);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(241, 50);
             this.btnShowAll.TabIndex = 34;
@@ -124,7 +124,7 @@ namespace AnyStore.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1272, 567);
+            this.ClientSize = new System.Drawing.Size(997, 567);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.cmbTransactionType);
             this.Controls.Add(this.lblTransactionType);

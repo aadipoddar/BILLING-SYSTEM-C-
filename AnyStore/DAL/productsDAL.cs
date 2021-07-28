@@ -252,14 +252,14 @@ namespace AnyStore.DAL
 
                 adapter.Fill(dt);
 
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     p.name = dt.Rows[0]["name"].ToString();
                     p.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
-                    p.qty= decimal.Parse(dt.Rows[0]["qty"].ToString());
+                    p.qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -331,18 +331,18 @@ namespace AnyStore.DAL
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                SqlDataAdapter adapter= new SqlDataAdapter(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
 
                 conn.Open();
 
                 adapter.Fill(dt);
 
-                if(dt.Rows.Count > 0)
+                if (dt.Rows.Count > 0)
                 {
                     qty = decimal.Parse(dt.Rows[0]["qty"].ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -366,7 +366,7 @@ namespace AnyStore.DAL
             {
                 string sql = "UPDATE tbl_products SET qty = @qty WHERE id=@id";
 
-                SqlCommand cmd = new SqlCommand(sql,conn);
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("@qty", Qty);
                 cmd.Parameters.AddWithValue("@id", ProductID);
@@ -375,7 +375,7 @@ namespace AnyStore.DAL
 
                 int rows = cmd.ExecuteNonQuery();
 
-                if(rows > 0)
+                if (rows > 0)
                 {
                     success = true;
                 }
@@ -384,7 +384,7 @@ namespace AnyStore.DAL
                     success = false;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -412,7 +412,7 @@ namespace AnyStore.DAL
 
                 success = UpdateQuantity(ProductID, NewQty);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -440,7 +440,7 @@ namespace AnyStore.DAL
 
                 success = UpdateQuantity(ProductID, NewQty);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -450,6 +450,38 @@ namespace AnyStore.DAL
             }
 
             return success;
+        }
+        #endregion
+
+        #region Display Products based on Category
+        public DataTable DisplayProductByCategory(string category)
+        {
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT * FROM tbl_products WHERE category='" + category + "'";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return dt;
         }
         #endregion
     }

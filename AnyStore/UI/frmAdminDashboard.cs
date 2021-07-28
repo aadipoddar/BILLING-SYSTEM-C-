@@ -59,5 +59,11 @@ namespace AnyStore
             frmTransactions transactions= new frmTransactions();
             transactions.Show();
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventory inventory = new frmInventory();
+            inventory.Show();
+        }
     }
 }

@@ -10,6 +10,9 @@
     <Compile Update="UI\frmDeaCust.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
