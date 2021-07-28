@@ -19,6 +19,9 @@
     <Compile Update="UI\frmPurchaseAndSales.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\frmTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\frmUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
