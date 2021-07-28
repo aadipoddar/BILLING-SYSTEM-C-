@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 
 namespace AnyStore.UI
 {
@@ -266,6 +267,20 @@ namespace AnyStore.UI
                 {
                     //transaction scope
                     scope.Complete();
+
+                    //code to print bill
+                    DGVPrinter printer = new DGVPrinter();
+
+                    printer.Title = "\r\n\r\n\r\n ANYSTORE \r\n\r\n";
+                    printer.SubTitle = "Kolkata, India \r\n Phone :- 9007388669 \r\n";
+                    printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+                    printer.PageNumbers = true;
+                    printer.PageNumberInHeader = false;
+                    printer.PorportionalColumns = true;
+                    printer.HeaderCellAlignment = StringAlignment.Near;
+                    printer.Footer = "Discount: " + txtDiscount.Text + "% \r\n" + "VAT : " + txtVat.Text + "% \r\n" + "Grand Total: " + txtGrandTotal.Text + "\r\n\r\n" + "THANK YOU FOR DOING BUSINESS WITH US";
+                    printer.FooterSpacing = 15;
+                    printer.PrintDataGridView(dgvAddedProducts);
 
                     MessageBox.Show("Transaction Coompleted");
 
