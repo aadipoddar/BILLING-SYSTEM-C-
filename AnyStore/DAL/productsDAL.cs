@@ -232,5 +232,44 @@ namespace AnyStore.DAL
             return dt;
         }
         #endregion
+
+        #region method to search product in transaction module
+        public productsBLL GetProductsForTransaction(string keyword)
+        {
+            productsBLL p = new productsBLL();
+
+            SqlConnection conn = new SqlConnection(myconnstrng);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT name,rate,qty FROM tbl_products WHERE id LIKE '%" + keyword + "%' OR name LIKE '%" + keyword + "%'";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+
+                conn.Open();
+
+                adapter.Fill(dt);
+
+                if(dt.Rows.Count > 0)
+                {
+                    p.name = dt.Rows[0]["name"].ToString();
+                    p.rate = decimal.Parse(dt.Rows[0]["rate"].ToString());
+                    p.qty= decimal.Parse(dt.Rows[0]["qty"].ToString());
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return p;
+        }
+        #endregion
     }
 }

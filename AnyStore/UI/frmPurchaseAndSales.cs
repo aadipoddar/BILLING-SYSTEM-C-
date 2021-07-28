@@ -20,6 +20,7 @@ namespace AnyStore.UI
         }
 
         DeaCustDAL dcDal = new DeaCustDAL();
+        productsDAL pDal = new productsDAL();
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
         {
@@ -64,6 +65,31 @@ namespace AnyStore.UI
             txtEmail.Text = dc.email;
             txtContact.Text = dc.contact;
             txtAddress.Text = dc.address;
+        }
+
+        private void txtSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            //get keyword from text box
+            string keyword = txtSearchProduct.Text;
+
+            if (keyword == "")
+            {
+                //clear all textboxes
+                txtProductName.Text = "";
+                txtProductQty.Text = "";
+                txtProductRate.Text = "";
+                txtProductInventory.Text = "";
+
+                return;
+            }
+
+            //write code to get details and set values on text boxes
+            productsBLL p = pDal.GetProductsForTransaction(keyword);
+
+            //now set the value from deacustdll to textboxes
+            txtProductName.Text = p.name;
+            txtProductInventory.Text = p.qty.ToString();
+            txtProductRate.Text = p.rate.ToString();
         }
     }
 }

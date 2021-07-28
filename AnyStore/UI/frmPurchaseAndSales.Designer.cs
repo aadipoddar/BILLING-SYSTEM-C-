@@ -351,6 +351,7 @@ namespace AnyStore.UI
             this.txtSearchProduct.Name = "txtSearchProduct";
             this.txtSearchProduct.Size = new System.Drawing.Size(152, 25);
             this.txtSearchProduct.TabIndex = 10;
+            this.txtSearchProduct.TextChanged += new System.EventHandler(this.txtSearchProduct_TextChanged);
             // 
             // txtProductName
             // 
